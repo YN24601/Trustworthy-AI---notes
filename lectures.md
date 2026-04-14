@@ -9,6 +9,7 @@
     - [Guidelines of European Commission](#guidelines-of-european-commission)
     - [Laws of Robotics](#laws-of-robotics)
     - [Terminology](#terminology)
+  - [Exercise 1](#exercise-1)
   - [Lecture 2: Basics of GenAI](#lecture-2-basics-of-genai)
 
 
@@ -82,5 +83,30 @@ Systems that translate moral principles into specific design requirements.
 - **AI Safety** ensures systems do not cause harm through failure or misalignment.
 - **AI Alignment** focuses on ensuring AI systems behave in ways aligned with human intentions and values.
 - **AI Security** ensures systems cannot be manipulated or abused by attackers.
+
+## Exercise 1
+
+1. Linear Algebra & Neural Representations
+   - Dot Product & Cosine Similarity
+   - Softmax Function
+2. Probability & Language Modeling
+   - Bayes’ Theorem
+   - Markov Assumption
+   - Chain Rule of Probability
+3. Statistics & Significance Testing
+   - Z-test
+   - P-values
+   - Confidence Intervals
+   - Bootstraping
+4. Information Theory & Optimization
+   - Entropy ($H$)
+   - Cross-Entropy
+   - KL Divergence ($D_{KL}$)
+   - Gradient Descent
+5. Evaluation Metrics & Robustness
+   - Confusion Matrix
+   - Precision vs. Recall
+   - F1 score
+
 
 ## Lecture 2: Basics of GenAI
