@@ -17,6 +17,9 @@
     - [LLM](#llm)
     - [Inference and Decoding Algorithms](#inference-and-decoding-algorithms)
   - [Exercise 2](#exercise-2)
+  - [Lecture 3: Evaluating Trustworthiness](#lecture-3-evaluating-trustworthiness)
+    - [Language generation](#language-generation)
+    - [Evaluation Metrics Recap](#evaluation-metrics-recap)
 
 ## Lecture 1: Introduction
 
@@ -137,6 +140,8 @@ Gen AI is mainly based on ML，using algorithorm to discover Patterns and struct
 **Self-attention** is a mechanism that allows the model to focus on different parts of the input sequence when making predictions. It is the **key component of the Transformer** model.
    > e.g. "The cat's name is Tom. He... ", the model should aware that 'He' refers to 'Tom'
 
+$softmax=\frac{QK^T}{\sqrt{d_k}}V$
+
 - Input: a sequence of tokens
 - Calculate query (Q), key (K), and value (V) vectors for each token
 - Weight (Attention Score): calculate the similarity (dot product) between Q and K
@@ -145,18 +150,58 @@ Gen AI is mainly based on ML，using algorithorm to discover Patterns and struct
 ### LLM
 
 - Pretraining: autoregressive language modeling based on large corpus, to learn to predict next token
-- Instruction tuning: supervised fine-tuning(SFT) the pre-trained model on a specific task (e.g. text classification, question answering, etc.), to make the model learn to follow the instruction.
+- Instruction tuning: supervised fine-tuning(SFT) the pre-trained model on smaller corpus, to make the model learn to follow the instruction.
 - Alignment training: perference learning using RLHF
 
-### Inference and Decoding Algorithms
+### Inference and Decoding Algorithms 
 
 There are some algorithms to generate the output sequence.
 
-- greedy search
-- beam search
-- random sampling
-  - temperature sampling
+- Greedy search
+  - Select the token with the highest probability at each step, stop afer a fixed number of steps or after a stop-word.
+  - Problems: locally optimal; not much variation.
+- Beam search
+  - Keep the $k$ most probable sequences at each step.
+  - need soring function to select the beam $Y$ which has the highest score.
+  - Problem: repetitive; high memory usage.
+- Random sampling
+  - temperature scaling: make the distribution more peaky
   - top-k samplinp
 
 ## Exercise 2
+
+
+## Lecture 3: Evaluating Trustworthiness
+
+
+### Language generation
+
+We use [decoding algorithm](#inference-and-Decoding-algorithms) to generate the output sequence. But how to evaluate the trustworthiness of the output?ct the next token, based on the probability distribution of the model.
+
+### Evaluation Metrics Recap
+
+**Classification**
+- Accuracy
+- Precision
+- Recall
+- F1 score
+- Macro for multi-class
+
+**Regression**
+- Error measure
+- Correlation coefficient
+
+**Generation**
+- Perplexity
+- ROUGE
+> Significant testing is important
+
+**Annotated data**
+- IAA: Inter-Annotator Agreement
+> Note: bias of annotators; the working condition of the annotators.
+
+
+
+
+
 
